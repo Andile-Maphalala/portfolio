@@ -1,0 +1,35 @@
+.page {
+  padding: 100px 24px;
+  color: white;
+  max-width: 1000px;
+  margin: auto;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .card {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+    margin-top: 20px;
+
+    h2 {
+      color: #4cc9f0;
+    }
+
+    p {
+      color: #888;
+    }
+
+    ul {
+      margin-top: 10px;
+      color: #ccc;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
