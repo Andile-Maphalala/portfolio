@@ -1,0 +1,273 @@
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+  
+  .ty-root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem;
+  }
+
+  .ty-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(76,201,240,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .ty-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(76,201,240,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(76,201,240,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .ty-card {
+    position: relative;
+    z-index: 10;
+    max-width: 580px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ty-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    animation: iconDrop 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+
+  .ty-icon-ring {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(76,201,240,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: ringPulse 2.5s ease-in-out infinite 1s;
+  }
+
+  .ty-icon-ring::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(76,201,240,0.15);
+    animation: ringPulse 2.5s ease-in-out infinite 1.3s;
+  }
+
+  .ty-checkmark {
+    font-size: 36px;
+    color: #4cc9f0;
+    line-height: 1;
+  }
+
+  .ty-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4cc9f0;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.3s;
+  }
+
+  .ty-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.45s;
+  }
+
+  .ty-heading span {
+    color: #4cc9f0;
+  }
+
+  .ty-message {
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.6s;
+  }
+
+  .ty-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 0 3rem;
+    text-align: left;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.75s;
+  }
+
+  .ty-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .ty-step:not(:last-child) .ty-step-line {
+    position: absolute;
+    left: 11px;
+    top: 28px;
+    width: 1px;
+    height: calc(100% + 0px);
+    background: rgba(76,201,240,0.2);
+  }
+
+  .ty-step-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(76,201,240,0.4);
+    background: rgba(76,201,240,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ty-step-dot-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4cc9f0;
+  }
+
+  .ty-step-body {
+    padding-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .ty-step-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 2px;
+  }
+
+  .ty-step-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin: 0;
+  }
+
+  .ty-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.9s;
+  }
+
+  .ty-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: #4cc9f0;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .ty-btn-primary:hover { background: #72d5f5; transform: translateY(-1px); }
+
+  .ty-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .ty-btn-ghost:hover { border-color: rgba(76,201,240,0.4); color: #4cc9f0; transform: translateY(-1px); }
+
+  .ty-social {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.05s;
+  }
+
+  .ty-social a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .ty-social a:hover { color: #4cc9f0; }
+
+  .ty-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 3rem auto 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1s;
+  }
+
+  @keyframes iconDrop {
+    from { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    to { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+  }
+
+  @keyframes ringPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }

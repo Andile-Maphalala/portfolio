@@ -1,0 +1,32 @@
+<section class="ty-root">
+  <div class="ty-grid"></div>
+  <div class="ty-bg-glow"></div>
+
+  <div class="ty-card">
+    <div class="ty-icon-wrap">
+      <div class="ty-icon-ring">
+        <span class="ty-checkmark">✓</span>
+      </div>
+    </div>
+
+    <p class="ty-eyebrow">Message received</p>
+    <h1 class="ty-heading">Thanks for<br>reaching <span>out.</span></h1>
+    <p class="ty-message">
+      Your message landed safely in my inbox.<br>Here's what happens next:
+    </p>
+
+    <div class="ty-timeline">
+      <div class="ty-step" *ngFor="let step of steps">
+        <div class="ty-step-dot"><div class="ty-step-dot-inner"></div></div>
+        <div class="ty-step-line" *ngIf="!step.last"></div>
+        <div class="ty-step-body">
+          <p class="ty-step-title">{{ step.title }}</p>
+          <p class="ty-step-desc">{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ty-actions">
+      <a href="/" class="ty-btn-primary">← Back to portfolio</a>
+      <a href="https://github.com/andile-maphalala" target="_blank" class="ty-btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/andile-maphalala-4a12391b2" target="_blank" class="ty-btn-ghost">LinkedIn</a>

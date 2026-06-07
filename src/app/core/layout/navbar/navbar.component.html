@@ -1,18 +1,29 @@
 <nav class="fixed top-0 w-full bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 z-50">
-    <div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
-        <div class="font-headline-md text-headline-md font-bold text-on-surface">My Dev Portfolio</div>
-        <div class="hidden md:flex gap-stack-lg items-center">
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
-                href="#about">About</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
-                href="#experience">Experience</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
-                href="#projects">Projects</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
-                href="#contact">Contact</a>
-        </div>
-        <button class="md:hidden text-on-surface">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
+  <div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
+    
+    <div class="font-headline-md text-headline-md font-bold text-on-surface">My Dev Portfolio</div>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex gap-stack-lg items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#about">About</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#experience">Experience</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#projects">Projects</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#contact">Contact</a>
     </div>
+
+    <!-- Hamburger button -->
+    <button class="md:hidden text-on-surface" (click)="toggleMenu()">
+      <span class="material-symbols-outlined">{{ menuOpen ? 'close' : 'menu' }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/30 px-margin-mobile py-stack-md flex flex-col gap-stack-md">
+    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#about" (click)="closeMenu()">About</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#experience" (click)="closeMenu()">Experience</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#projects" (click)="closeMenu()">Projects</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#contact" (click)="closeMenu()">Contact</a>
+  </div>
 </nav>
