@@ -1,31 +1,65 @@
-<nav class="fixed top-0 w-full bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 z-50">
-  <div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
-    
-    <div class="font-headline-md text-headline-md font-bold text-on-surface">
-      <a href="#">My Dev Portfolio</a>
+<nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/5 backdrop-blur-xl">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <a href="#"
+      class="font-display text-xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+      ANDILE MAPHALALA
+    </a>
+
+    <div class="hidden md:flex gap-8 items-center text-sm font-medium text-on-surface-muted">
+      <a href="#about" class="hover:text-cyan-400 transition-colors">
+        About
+      </a>
+
+       <a href="#experience" class="hover:text-cyan-400 transition-colors">
+        Experience
+      </a>
+
+      <a href="#projects" class="hover:text-cyan-400 transition-colors">
+        Projects
+      </a>
+
+      <a href="#contact" class="hover:text-cyan-400 transition-colors">
+        Contact
+      </a>
     </div>
 
-    <!-- Desktop links -->
-    <div class="hidden md:flex gap-stack-lg items-center">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#about">About</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#experience">Experience</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#projects">Projects</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#contact">Contact</a>
-    </div>
-
-    <!-- Hamburger button -->
+    <!-- Mobile Hamburger -->
     <button class="md:hidden text-on-surface" (click)="toggleMenu()">
-      <span class="material-symbols-outlined">{{ menuOpen ? 'close' : 'menu' }}</span>
+      <span class="material-symbols-outlined">
+        {{ menuOpen ? 'close' : 'menu' }}
+      </span>
     </button>
+
   </div>
 
-  <!-- Mobile dropdown -->
-  <div
-    *ngIf="menuOpen"
-    class="md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/30 px-margin-mobile py-stack-md flex flex-col gap-stack-md">
-    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#about" (click)="closeMenu()">About</a>
-    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#experience" (click)="closeMenu()">Experience</a>
-    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#projects" (click)="closeMenu()">Projects</a>
-    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md py-2" href="#contact" (click)="closeMenu()">Contact</a>
+  <!-- Mobile Menu -->
+  <div *ngIf="menuOpen"
+    class="md:hidden bg-surface/95 backdrop-blur-xl border-t border-white/5 px-6 py-4 flex flex-col gap-4">
+
+    <a href="#about"
+      class="text-on-surface-muted hover:text-cyan-400 transition-colors py-2"
+      (click)="closeMenu()">
+      About
+    </a>
+
+    <a href="#experience"
+      class="text-on-surface-muted hover:text-cyan-400 transition-colors py-2"
+      (click)="closeMenu()">
+      Experience
+    </a>
+
+    <a href="#projects"
+      class="text-on-surface-muted hover:text-cyan-400 transition-colors py-2"
+      (click)="closeMenu()">
+      Projects
+    </a>
+
+    <a href="#contact"
+      class="text-on-surface-muted hover:text-cyan-400 transition-colors py-2"
+      (click)="closeMenu()">
+      Contact
+    </a>
+
   </div>
 </nav>
