@@ -1,7 +1,7 @@
 # =========================================
 # Stage 1: Build the Angular application
 # =========================================
-ARG NODE_VERSION=24.12.0-alpine
+ARG NODE_VERSION=24.15.0-alpine
 
 FROM node:${NODE_VERSION} AS builder
 
