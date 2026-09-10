@@ -4,31 +4,122 @@
     <h2 class="font-display text-4xl sm:text-5xl font-bold mt-2">Featured <span class="text-cyan-400">Work</span></h2>
     <p class="text-on-surface-muted max-w-xl mx-auto mt-3">Solutions engineered for scalability and impact.</p>
   </div>
-    <div class="flex flex-col md:flex-row justify-between items-end mb-stack-xl gap-stack-md">
-        <a
+
+  <div class="flex flex-col md:flex-row justify-between items-end mb-stack-xl gap-stack-md">
+    
+           <a
             class="font-label-md text-label-md text-primary flex items-center gap-stack-xs hover:gap-stack-sm transition-all"
             href="https://github.com/Andile-Maphalala" target="_blank">
             View GitHub <span class="material-symbols-outlined">arrow_forward</span>
     </a>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 fade-section" id="projects-grid">
+
+    <div class="project-card rounded-2xl p-6 transition-all group md:col-span-2">
+      <div class="flex items-start justify-between">
+        <span class="text-4xl">🎮</span>
+        <span class="text-xs font-mono text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">In Progress</span>
+      </div>
+      <h3 class="text-2xl font-bold mt-4 group-hover:text-cyan-400 transition-colors">Resource Tracker</h3>
+      <p class="text-on-surface-muted text-sm mt-2 leading-relaxed">
+        A full-stack resource and inventory planning tool for gamers managing complex build requirements —
+        crafting trees, facility needs, and component tracking for games like Subnautica, Valheim, and Grounded.
+        Built to go deeper on Blazor WebAssembly and to practice clean/hexagonal architecture end-to-end on a
+        project built from scratch.
+      </p>
+      <p class="text-on-surface-muted text-xs mt-3 leading-relaxed">
+        <span class="text-cyan-400 font-semibold">Architecture:</span> Frontend and backend are intentionally split
+        into separate repos to allow independent deployment and versioning. Backend uses a layered/clean architecture (Domain, Application,
+        Persistence, Api) with CQRS pattern and image handling isolated in its own service; integration tested with Testcontainers.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="skill-tag">.NET 10</span>
+        <span class="skill-tag">Blazor WASM</span>
+        <span class="skill-tag">MudBlazor</span>
+        <span class="skill-tag">ASP.NET Core</span>
+        <span class="skill-tag">EF Core</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MediatR</span>
+        <span class="skill-tag">JWT</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">xUnit / Testcontainers</span>
+      </div>
+      <div class="mt-6 flex gap-4">
+        <a href="https://github.com/Andile-Maphalala/ResourceTrackerUI" target="_blank" class="text-sm font-medium text-cyan-400 hover:underline">Frontend →</a>
+        <a href="https://github.com/Andile-Maphalala/ResourceTracker" target="_blank" class="text-sm font-medium text-cyan-400 hover:underline">Backend →</a>
+      </div>
     </div>
-  <!-- <div class="grid md:grid-cols-2 gap-8 fade-section" id="projects-grid">
+
+    <!-- Family Savings Tracker -->
+    <div class="project-card rounded-2xl p-6 transition-all group">
+      <div class="flex items-start justify-between">
+        <span class="text-4xl">💰</span>
+        <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full">Live · Private</span>
+      </div>
+      <h3 class="text-2xl font-bold mt-4 group-hover:text-cyan-400 transition-colors">Family Savings Tracker</h3>
+      <p class="text-on-surface-muted text-sm mt-2 leading-relaxed">
+        A savings-tracking app built for my family to log and monitor shared financial contributions and goals.
+      </p>
+      <p class="text-on-surface-muted text-xs mt-3 leading-relaxed">
+        <span class="text-cyan-400 font-semibold">Architecture:</span> Split into API, Data, and UI projects,
+        deployed via Docker Compose with shared volumes for Postgres data and Data Protection keys — letting the
+        API and UI share auth/session state across containers.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="skill-tag">Blazor WASM</span>
+        <span class="skill-tag">ASP.NET Core</span>
+        <span class="skill-tag">EF Core</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Docker Compose</span>
+      </div>
+      <div class="mt-6 flex gap-4">
+        <a href="https://github.com/Andile-Maphalala/SavingTracker" target="_blank" class="text-sm font-medium text-cyan-400 hover:underline">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- This Portfolio -->
+    <div class="project-card rounded-2xl p-6 transition-all group">
+      <div class="flex items-start justify-between">
+        <span class="text-4xl">🌐</span>
+        <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full">Live</span>
+      </div>
+      <h3 class="text-2xl font-bold mt-4 group-hover:text-cyan-400 transition-colors">This Portfolio</h3>
+      <p class="text-on-surface-muted text-sm mt-2 leading-relaxed">
+        Self-hosted end-to-end: containerized with Docker, exposed securely via Cloudflare Tunnels , with automated build/deploy through GitHub Actions.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Cloudflare Tunnels</span>
+        <span class="skill-tag">GitHub Actions</span>
+      </div>
+      <div class="mt-6 flex gap-4">
+        <a href="https://github.com/Andile-Maphalala/portfolio" target="_blank" class="text-sm font-medium text-cyan-400 hover:underline">GitHub →</a>
+        <a href="/" class="text-sm font-medium text-on-surface-muted hover:text-white">You're on it</a>
+      </div>
+    </div>
+
+    <!-- F1 Stats -->
     <div class="project-card rounded-2xl p-6 transition-all group">
       <div class="flex items-start justify-between">
         <span class="text-4xl car-icon drift-skid-element">🏎️</span>
-        <span class="text-xs font-mono text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">Django · SQLite</span>
+        <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full">Archived</span>
       </div>
       <h3 class="text-2xl font-bold mt-4 group-hover:text-cyan-400 transition-colors">F1 Stats</h3>
-      <p class="text-on-surface-muted text-sm mt-2 leading-relaxed">Scrape F1 data and visualize race statistics.</p>
+      <p class="text-on-surface-muted text-sm mt-2 leading-relaxed">
+        Scraped and visualized historical F1 race data through a Django backend and SQLite store.
+      </p>
+      <p class="text-on-surface-muted text-xs mt-2 italic">No longer hosted — code available on GitHub.</p>
       <div class="flex flex-wrap gap-2 mt-4">
-        <span class="skill-tag">Python</span><span class="skill-tag">Django</span><span class="skill-tag">SQLite</span><span class="skill-tag">Html</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">Heroku</span>
       </div>
       <div class="mt-6 flex gap-4">
-        <a href="#" class="text-sm font-medium text-cyan-400 hover:underline">Case Study →</a>
-        <a href="#" class="text-sm font-medium text-on-surface-muted hover:text-white">Live Demo</a>
+        <a href="https://github.com/Andile-Maphalala/F1Statistics" target="_blank" class="text-sm font-medium text-cyan-400 hover:underline">GitHub →</a>
       </div>
     </div>
-  </div> -->
 
-
-  <h1 style="text-align: center;"> Coming Soon </h1>
+  </div>
 </section>
